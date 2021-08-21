@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
     private bool shouldJump;
     private bool isGameStarted = false;
+    private float origGravityScale = 1f;
 
     private void OnEnable() {
         GameStartHandler.OnGameStarted += HandleGameStarted;
@@ -26,11 +27,18 @@ public class PlayerController : MonoBehaviour
         GameStartHandler.OnGameStarted -= HandleGameStarted;
     }
 
+    private void Start() {
+        origGravityScale = rb2d.gravityScale;
+    }
+
     // Update is called once per frame
     void Update()
     {
         if(isGameStarted){
+            rb2d.gravityScale = origGravityScale;
             GetInput();
+        } else {
+            rb2d.gravityScale = 0;
         }
     }
 
