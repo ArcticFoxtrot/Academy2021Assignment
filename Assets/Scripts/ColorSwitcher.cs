@@ -13,9 +13,7 @@ public class ColorSwitcher : MonoBehaviour
     private Collider2D coll;
     private PlayerMaterialHandler playerMaterialHandler;
 
-    
 
-    // Start is called before the first frame update
     void Start()
     {
         coll = gameObject.GetComponent<Collider2D>();
@@ -33,7 +31,7 @@ public class ColorSwitcher : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Color Switcher hit!");
+        //when switcher is hit, swap the material in playermaterial handler and destroy the switcher
         if(other.CompareTag("Player")){
             playerMaterialHandler.SetNewPlayerMaterial();
             Material destroyFXMaterial = playerMaterialHandler.GetPlayerMaterial();
@@ -43,6 +41,7 @@ public class ColorSwitcher : MonoBehaviour
     }
 
     private void SelfDestruct(Material fxMaterial){
+        //play audio and particle system
         ParticleSystem spawnedFX = Instantiate(destroyParticles, transform.position, Quaternion.identity);
         AudioSource spawnedFXAudio = spawnedFX.gameObject.GetComponent<AudioSource>();
         spawnedFXAudio.Play();

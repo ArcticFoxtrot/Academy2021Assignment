@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     private void GetInput(){
         if(Input.GetMouseButtonDown(0)){
-            shouldJump = true;
+            shouldJump = true; //set to prevent frame mismatches between update and fixedupdate
             playerAudioSource.PlayOneShot(jumpAudio);
         }
     }

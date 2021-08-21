@@ -35,19 +35,17 @@ public class CameraController : MonoBehaviour
     }
 
     private void LateUpdate() {
+        //at game over, stop moving camera
         if(!isGameOver){
             currentPosition = transform.position;
             nextPosition = playerController.transform.position;
             nextPosition.z = cameraZPosition;
             //compare current position to player position, if current position + threshold is lower than player position, move upwards
             if(currentPosition.y + cameraYThreshold <= nextPosition.y){
-                //move camera upwards
+                //move camera upwards with smoothing
                 transform.position = Vector3.SmoothDamp(transform.position, nextPosition, ref velocity, smoothTime);
             }
         }
-    
-        
-        
     }
 
     private void HandlePlayerDeath()
