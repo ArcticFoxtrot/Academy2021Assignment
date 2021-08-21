@@ -28,6 +28,9 @@ Scorekeeping was done with a singleton pattern ScoreKeeper component for simplic
 
 UI management components are all under the same UI Canvas object, and they handle the game start and game over situations with the SceneLoader.
 
+General about architecture:
+There is a fair amount of tight coupling going on, some events and one singleton. A more robust architecture would probably remove some direct references between different gameobjects/components and create interfaces or manager classes. Components themselves are fairly straightforward since I tried to have a single component doing just one thing. E.g. splitting the different player functionalities into different components helped there.
+
 Known issues:
 On game over, if the player happens to click once right after the player has hit an obstacle, the game restarts because the "click anywhere" condition for restarting the game has been fulfilled. Not game breaking.
 
