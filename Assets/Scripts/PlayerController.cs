@@ -16,17 +16,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody2D rb2d;
 
     private bool shouldJump;
+    private bool isGameStarted = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private void OnEnable() {
+        GameStartHandler.OnGameStarted += HandleGameStarted;
+    }
+
+    private void OnDisable() {
+        GameStartHandler.OnGameStarted -= HandleGameStarted;
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetInput();
+        if(isGameStarted){
+            GetInput();
+        }
     }
 
     private void FixedUpdate() {
@@ -42,5 +47,9 @@ public class PlayerController : MonoBehaviour
             shouldJump = true;
             playerAudioSource.PlayOneShot(jumpAudio);
         }
+    }
+
+    private void HandleGameStarted(){
+        isGameStarted = true;
     }
 }
