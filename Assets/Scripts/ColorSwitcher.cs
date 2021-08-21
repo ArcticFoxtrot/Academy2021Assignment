@@ -44,6 +44,8 @@ public class ColorSwitcher : MonoBehaviour
 
     private void SelfDestruct(Material fxMaterial){
         ParticleSystem spawnedFX = Instantiate(destroyParticles, transform.position, Quaternion.identity);
+        AudioSource spawnedFXAudio = spawnedFX.gameObject.GetComponent<AudioSource>();
+        spawnedFXAudio.Play();
         var main = spawnedFX.main;
         main.startColor = fxMaterial.color;
         spawnedFX.Play();

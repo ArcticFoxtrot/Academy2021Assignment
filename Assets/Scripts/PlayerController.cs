@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     [Header("Player Movement Settings")]
     [SerializeField] float upForce = 1f;
     [SerializeField] float maxVelocity = 5f;
+    [SerializeField] AudioClip jumpAudio;
+    [SerializeField] AudioSource playerAudioSource;
     
 
     [Header("Required components")]
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
     private void GetInput(){
         if(Input.GetMouseButtonDown(0)){
             shouldJump = true;
+            playerAudioSource.PlayOneShot(jumpAudio);
         }
     }
 }

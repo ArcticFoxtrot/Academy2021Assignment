@@ -398,6 +398,10 @@ PrefabInstance:
       value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 5057410944693119068, guid: 507334c188fd2ee4c956c0ec18ed01aa, type: 3}
+      propertyPath: smoothTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057410944693119068, guid: 507334c188fd2ee4c956c0ec18ed01aa, type: 3}
       propertyPath: playerController
       value: 
       objectReference: {fileID: 642792358}
@@ -463,6 +467,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 249571186668955949, guid: 4acea1ff5cf7eb64dbab300d1e251197, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 249571186668955949, guid: 4acea1ff5cf7eb64dbab300d1e251197, type: 3}
       propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
@@ -522,6 +530,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 249571186668956115, guid: 4acea1ff5cf7eb64dbab300d1e251197, type: 3}
+      propertyPath: upForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 249571186668956115, guid: 4acea1ff5cf7eb64dbab300d1e251197, type: 3}
+      propertyPath: jumpAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 803dabc620730d14e9b78a003b083a0d, type: 3}
+    - target: {fileID: 249571186668956115, guid: 4acea1ff5cf7eb64dbab300d1e251197, type: 3}
+      propertyPath: playerAudioSource
+      value: 
+      objectReference: {fileID: 1520810919}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4acea1ff5cf7eb64dbab300d1e251197, type: 3}
 --- !u!1 &361510569

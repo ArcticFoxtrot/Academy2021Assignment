@@ -8,8 +8,7 @@ public class CameraController : MonoBehaviour
 
     [Header("Camera Movement Settings")]
     [SerializeField] float cameraYThreshold;
-    [SerializeField] float cameraMoveSpeed = 5f;
-    [SerializeField] float smoothTime = .3f;
+    [SerializeField] float smoothTime = .4f;
 
     [Header("Reference To Player components")]
     [SerializeField] PlayerController playerController;
