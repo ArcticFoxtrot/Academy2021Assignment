@@ -29,16 +29,14 @@ public class PlayerController : MonoBehaviour
 
     private void Start() {
         origGravityScale = rb2d.gravityScale;
+        rb2d.gravityScale = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         if(isGameStarted){
-            rb2d.gravityScale = origGravityScale;
             GetInput();
-        } else {
-            rb2d.gravityScale = 0;
         }
     }
 
@@ -59,5 +57,6 @@ public class PlayerController : MonoBehaviour
 
     private void HandleGameStarted(){
         isGameStarted = true;
+        rb2d.gravityScale = origGravityScale;
     }
 }
